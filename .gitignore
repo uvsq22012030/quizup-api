@@ -1,5 +1,6 @@
 .DS_Store
 .vscode
+.scripting
 node_modules
 npm-debug.log
 server/public/build
