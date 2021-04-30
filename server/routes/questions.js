@@ -28,6 +28,7 @@ module.exports = [
 			});
 		},
 	},
+
 	{
 		method: "GET",
 		path: "/categories/{id}",
@@ -36,6 +37,33 @@ module.exports = [
 			const ObjectID = req.mongo.ObjectID;
 			const category = await req.mongo.db
 				.collection("categories")
+				.findOne({ _id: new ObjectID(id) });
+			return category;
+		},
+	},
+
+	{
+		method: "POST",
+		path: "/top-categories",
+		handler: async (req, h) => {
+			const id = req.params.id;
+			const ObjectID = req.mongo.ObjectID;
+			const category = await req.mongo.db
+				.collection("top")
+				.findOne({ _id: new ObjectID(id) });
+			return category;
+		},
+	},
+
+	// send a list of top priorities
+	{
+		method: "GET",
+		path: "/top-categories",
+		handler: async (req, h) => {
+			const id = req.params.categories;
+			const ObjectID = req.mongo.ObjectID;
+			const category = await req.mongo.db
+				.collection("top-cat")
 				.findOne({ _id: new ObjectID(id) });
 			return category;
 		},

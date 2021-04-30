@@ -19,7 +19,6 @@ async function createServer() {
 	await server.register(require("./plugins/log-errors"));
 	await server.register(require("./plugins/logging"));
 	await server.register(require("./plugins/mongo"));
-	await server.register(require("blipp"));
 
 	return server;
 }

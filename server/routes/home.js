@@ -10,6 +10,7 @@ module.exports = [
 			};
 		},
 	},
+	/* 
 	{
 		method: "POST",
 		path: "/",
@@ -25,5 +26,6 @@ module.exports = [
 				}),
 			},
 		},
-	},
+	}, 
+	*/
 ];
