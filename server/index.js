@@ -10,8 +10,8 @@ async function createServer() {
 				options: {
 					abortEarly: false,
 				},
-				cors: { origin: ["*"] }
 			},
+			cors: { origin: ["*"] },
 		},
 	});
 
